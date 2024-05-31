@@ -1,0 +1,131 @@
+@import '../../../../scss/variables';
+
+.form {
+    width: min-content;
+    height: auto;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-left: 5%;
+
+    @media (max-width: 1240px) {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 0 5%;
+        margin-bottom: 20px;
+    }
+}
+
+.inputBlock {
+    margin: 5px 0;
+}
+
+.title,
+.textarea {
+    height: 100%;
+
+    @media (max-width: 1240px) {
+        width: 100%;
+    }
+}
+
+.title,
+.textarea,
+.button {
+    padding: 0 10px;
+
+    @media (max-width: 1240px) {
+        padding: 10px;
+    }
+}
+
+.title,
+.textarea,
+.button,
+.disabled {
+    font-size: 20px;
+
+    @media (max-width: 565px) {
+        font-size: 16px;
+    }
+}
+
+.title {
+    border: 1px solid rgb(167, 81, 248);
+    border-radius: 10px;
+}
+
+.textarea {
+    resize: none;
+    border: 1px solid rgb(167, 81, 248);
+    border-radius: 10px;
+}
+
+.title,
+.textarea {
+    &.error {
+        border: 1px solid rgba(255, 27, 27, 0.9);
+
+        animation: error-shake 0.3s linear;
+
+        @keyframes error-shake {
+            0% {
+                transform: translateX(-10px);
+            }
+            25% {
+                transform: translateX(10px);
+            }
+            50% {
+                transform: translateX(-10px);
+            }
+            75% {
+                transform: translateX(10px);
+            }
+            100% {
+                transform: translateX(0px);
+            }
+        }
+    }
+}
+
+.button {
+    margin: 5px 0;
+    cursor: pointer;
+    border: 1px solid rgb(167, 81, 248);
+    background-color: rgb(167, 81, 248);
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: white;
+        color: rgb(167, 81, 248);
+    }
+
+    &:active {
+        background-color: rgb(245, 245, 245);
+        color: rgb(176, 94, 252);
+        border-color: rgb(176, 94, 252);
+    }
+}
+
+.disabled {
+    cursor: not-allowed;
+    padding: 10px;
+    border: 1px solid #8c6ea8;
+    background-color: #8c6ea8;
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+}
+
+.errors {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 27, 27, 0.9);
+    font-size: 16px;
+    font-family: $fontFamilyTitles;
+}

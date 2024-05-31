@@ -1,0 +1,36 @@
+.preloader {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 25%;
+    margin-right: 25%;
+
+    animation: purple-circle 2s linear 0s infinite alternate, orange-circle 4s ease-in-out 0s infinite alternate;
+
+    @keyframes purple-circle {
+        0% {
+            left: 0px;
+        }
+        50% {
+            border-radius: 10%;
+        }
+        100% {
+            transform: rotate(360deg);
+            left: 400px;
+        }
+    }
+
+    @keyframes orange-circle {
+        0% {
+            background-color: #c552fa;
+        }
+        50% {
+            background-color: #e667ff;
+        }
+        100% {
+            background-color: #c552fa;
+        }
+    }
+}
