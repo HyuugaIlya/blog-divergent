@@ -44,6 +44,20 @@ export const articlesSlice = createSlice({
                 state.articles = []
             })
 
+            //Поиск по статье
+            .addCase(setArticleFilter.pending, (state) => {
+                state.fetchStatus = Status.LOADING
+                state.articles = []
+            })
+            .addCase(setArticleFilter.fulfilled, (state, action: PayloadAction<TArticle[]>) => {
+                state.fetchStatus = Status.SUCCESS
+                state.articles = action.payload
+            })
+            .addCase(setArticleFilter.rejected, (state) => {
+                state.fetchStatus = Status.ERROR
+                state.articles = []
+            })
+
             //Добавление новой статьи
             .addCase(postArticle.pending, (state) => {
                 state.fetchStatus = Status.LOADING
@@ -108,6 +122,14 @@ export const getArticles = createAsyncThunk<TArticle[]>(
     'articles/getArticles',
     async () => {
         const data = await articlesAPI.getArticles()
+        return data
+    }
+)
+
+export const setArticleFilter = createAsyncThunk<TArticle[], string>(
+    'articles/setArticleFilter',
+    async (filter: string) => {
+        const data = await articlesAPI.setArticleFilter(filter)
         return data
     }
 )

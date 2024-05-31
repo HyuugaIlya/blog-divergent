@@ -1,0 +1,37 @@
+.root {
+    cursor: text;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 450px;
+    padding: 12px 20px;
+    border: 1px solid white;
+    width: 450px;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    transition: 0.3s;
+
+    &:hover {
+        border: 1px solid #a751f8;
+    }
+
+    @media (max-width: 565px) {
+        width: auto;
+    }
+}
+
+.input {
+    font-size: 20px;
+    width: 100%;
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    opacity: 0.3;
+
+    &:hover {
+        stroke: #a751f8;
+    }
+}

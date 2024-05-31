@@ -106,6 +106,19 @@ export const articlesAPI = {
             throw new Error('Ошибка!')
         }
     },
+    async setArticleFilter(filter: string) {
+        try {
+            const result = await new Promise<TArticle[]>(r => setTimeout(() => {
+                const regex = new RegExp(filter, 'i')
+                r(filter !== '' ? [...articles.filter(el => el.title.match(regex))] : articles)
+            }, 200))
+
+            return result
+        } catch (error) {
+            console.log(error)
+            throw new Error('Ошибка!')
+        }
+    },
     async postArticle(article: {
         title: string,
         body: string,
