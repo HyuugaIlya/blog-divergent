@@ -59,7 +59,7 @@ let articles: TArticle[] = [
         id: 4,
         title: 'Dolor',
         body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto laboriosam asperiores libero consequuntur modi dolore, consequatur reiciendis sed velit officiis voluptates impedit ratione debitis voluptate laudantium possimus dolorem dicta itaque?',
-        imgUrl: 'https://i.artfile.ru/1920x1440_1337552_[www.ArtFile.ru].jpg',
+        imgUrl: 'https://images.wallpaperscraft.ru/image/single/konstruktsiia_ten_ozero_1240583_1920x1200.jpg',
         comments: [
             {
                 id: 1,
